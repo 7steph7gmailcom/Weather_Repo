@@ -11,70 +11,10 @@ body {
     font-family: 'Courier New', Courier, monospace;
 }
 
-.app-wrap {
-    display: flex;
-    flex-direction: row;
-    min-width: 100%;
+#currentCity {
+    width: 84%;
+    
 }
 
-.searchbox {
-width: 100%;
-padding: 50px;
 
-
-}
-
-header {
-    padding: 30px 30px 30px;
-    width: 100%;
-    justify-items: right;
-}
-
- header input{
-      width: 75%;
-      max-width: 500px;
-      padding: 10px 10px;
-      outline: 10px, 10px, 10px, 10px;
-      background-color: rgb(100, 92, 92);
-      font-weight: 300;
-      font-size: 20px;
-  }
-
-  main {
-      flex: 1 1 100%;
-      padding: 50px 100px 50px;
-      display: flex;
-      flex-direction: column;
-  }
-
-  .location .city {
-      color: ivory;
-      font-size: 30px;
-      font-weight: bold;
-  }
-
-  .current .temp {
-      color: ivory;
-      font-weight: bolder;
-      font-size: 65px;
-      padding-top:  15px;
-      padding-bottom: 15px;
-  }
-
-  .current .temp span {
-      font-weight: 500;
-      font-size: 50px;
-  }
-
-.current .weather {
-    font-size: 20px;
-    font-weight: bolder;
-    color: ivory;
-}
-
-  .current .low-high {
-      color: ivory;
-      font-size: 75px;
-      font-weight: 500;
-  }
   
