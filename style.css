@@ -15,22 +15,26 @@ body {
     display: flex;
     flex-direction: row;
     min-width: 100%;
-    
+}
+
+.searchbox {
+width: 100%;
+padding: 50px;
+
+
 }
 
 header {
-    display: flex;
-    /* align-items: center; */
-    padding: 30px 10px 15px;
-    justify-content: center;
+    padding: 30px 30px 30px;
+    width: 100%;
+    justify-items: right;
 }
 
  header input{
-      width: 100%;
-      max-width: 280px;
-      padding: 10px 15px;
-      border: 10px;
-      outline: 10px;
+      width: 75%;
+      max-width: 500px;
+      padding: 10px 10px;
+      outline: 10px, 10px, 10px, 10px;
       background-color: rgb(100, 92, 92);
       font-weight: 300;
       font-size: 20px;
@@ -59,7 +63,14 @@ header {
 
   .current .temp span {
       font-weight: 500;
+      font-size: 50px;
   }
+
+.current .weather {
+    font-size: 20px;
+    font-weight: bolder;
+    color: ivory;
+}
 
   .current .low-high {
       color: ivory;
