@@ -1,29 +1,72 @@
 # Weather_Repo
 # 06 Server-Side APIs: Weather Dashboard
-
-## Your Task
-
-Third-party APIs allow developers to access their data and functionality by making requests with specific parameters to a URL. Developers are often tasked with retrieving data from another application's API and using it in the context of their own. Your challenge is to build a weather dashboard that will run in the browser and feature dynamically updated HTML and CSS.
-
-Use the [OpenWeather One Call API](https://openweathermap.org/api/one-call-api) to retrieve weather data for cities. Read through the documentation for setup and usage instructions. You will use `localStorage` to store any persistent data. For more information on how to work with the OpenWeather API, refer to the [Full-Stack Blog on how to use API keys](https://coding-boot-camp.github.io/full-stack/apis/how-to-use-api-keys).
+# Stephanie Johansson
 
 
+#### Weather Dashboard
 
 
-Weather Dashboard
-GIVEN a weather dashboard with form inputs
-WHEN I search for a city
-THEN I am presented with current and future conditions for that city and that city is added to the search history
+#### This weeks project was to create a Weather Dashboard with the API Open Weather. A user should be able to type in a city of their choosing and have that cities weather populate on the page along with a 5 day forecast. Temperature, wind speed, UV index, humidity and a weather icon should all appear for the user.
 
-WHEN I view current weather conditions for that city
-THEN I am presented with the city name, the date, an icon representation of weather conditions, the temperature, the humidity, the wind speed, and the UV index
+## Screenshot of Finished Project
 
-WHEN I view the UV index
-THEN I am presented with a color that indicates whether the conditions are favorable, moderate, or severe
 
-WHEN I view future weather conditions for that city
-THEN I am presented with a 5-day forecast that displays the date, an icon representation of weather conditions, the temperature, the
-wind speed, and the humidity
 
-WHEN I click on a city in the search history
-THEN I am again presented with current and future conditions for that city
+## Technology Used
+
+- HTML
+- CSS
+- Java Script
+
+## Resources Used
+
+- [Google](https://google.com)
+- [Moment.js](https://momentjs.com)
+- [w3schools](https://w3schools.com)
+- [cdnjs](https://cdnjs.com)
+- [MDN Web Docs](https://developer.mozilla.org)
+
+## Setup/Installation Requirements
+
+- internet service
+- device with a monitor
+- a web browser is needed to view application
+- Github account to view code
+- click on URL code to view HTML document
+- cut and paste Github repository to view code
+
+## Contact Information
+
+stephanie.johansson@gmail.com
+
+linkedin.com/in/stephanie.johansson-934096213
+
+
+## Technology Used
+
+- HTML
+- CSS
+- Java Script
+
+## Resources Used
+
+- [Google](https://google.com)
+- [Moment.js](https://momentjs.com)
+- [w3schools](https://w3schools.com)
+- [cdnjs](https://cdnjs.com)
+- [MDN Web Docs](https://developer.mozilla.org)
+
+## Setup/Installation Requirements
+
+- internet service
+- device with a monitor
+- a web browser is needed to view application
+- Github account to view code
+- click on URL code to view HTML document
+- cut and paste Github repository to view code
+
+## Contact Information
+
+stephanie.johansson@gmail.com
+
+linkedin.com/in/stephanie.johansson-934096213

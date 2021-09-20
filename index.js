@@ -1,9 +1,10 @@
 const apiKey = "&appid=86ea8aa56587bcd972b7b5efee08d7db";
-let city = $("#searchTerm").val();
+let city = $("#searchCity").val();
 let date = new Date();
+// var moment = require('moment'); // require
+// moment().format(); 
 
-
-$("#searchTerm").keypress(function(event) { 
+$("#searchCity").keypress(function(event) { 
 	
 	if (event.keyCode === 13) { 
 		event.preventDefault();
@@ -16,13 +17,12 @@ $("#searchBtn").on("click", function() {
   $('#forecastH5').addClass('show');
 
   // get the value of the input from user
-  city = $("#searchTerm").val();
+  city = $("#searchCity").val();
   
   // clear input box
-  $("#searchTerm").val("");  
+  $("#searchCity").val("");  
 
-  // full url to call api
-  const queryUrl = "https://api.openweathermap.org/data/2.5/weather?q=" + city + apiKey;
+  const queryUrl = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&units=imperial&cnt=40&" + apiKey;
 
   $.ajax({
     url: queryUrl,
@@ -36,7 +36,7 @@ $("#searchBtn").on("click", function() {
     console.log(response.wind.speed)
 
     getCurrentConditions(response);
-    getCurrentForecast(response);
+    getForecast(response);
     makeList();
 
     })
@@ -49,10 +49,6 @@ $("#searchBtn").on("click", function() {
 
   function getCurrentConditions (response) {
 
-    // get the temperature and convert to fahrenheit 
-    let tempF = (response.main.temp - 273.15) * 1.80 + 32;
-    tempF = Math.floor(tempF);
-
     $('#currentCity').empty();
 
     // get and set the content 
@@ -60,7 +56,7 @@ $("#searchBtn").on("click", function() {
     const cardBody = $("<div>").addClass("card-body");
     const city = $("<h4>").addClass("card-title").text(response.name);
     const cityDate = $("<h4>").addClass("card-title").text(date.toLocaleDateString('en-US'));
-    const temperature = $("<p>").addClass("card-text current-temp").text("Temperature: " + tempF + " °F");
+    const temperature = $("<p>").addClass("card-text current-temp").text("Temperature: " + response.main.temp + "°F");
     const humidity = $("<p>").addClass("card-text current-humidity").text("Humidity: " + response.main.humidity + "%");
     const wind = $("<p>").addClass("card-text current-wind").text("Wind Speed: " + response.wind.speed + " MPH");
     const image = $("<img>").attr("src", "https://openweathermap.org/img/w/" + response.weather[0].icon + ".png")
@@ -73,10 +69,10 @@ $("#searchBtn").on("click", function() {
    
   }
 
-function getCurrentForecast () {
+function getForecast () {
   
   $.ajax({
-    url: "https://api.openweathermap.org/data/2.5/forecast?q=" + city + apiKey,
+    url: "https://api.openweathermap.org/data/2.5/forecast?q=" + city + "&units=imperial&cnt=40&" + apiKey,
     method: "GET"
   }).then(function (response){
 
@@ -100,15 +96,11 @@ function getCurrentForecast () {
       console.log(hour);
 
       if(results[i].dt_txt.indexOf("12:00:00") !== -1){
-        
-        // get the temperature and convert to fahrenheit 
-        let temp = (results[i].main.temp - 273.15) * 1.80 + 32;
-        let tempF = Math.floor(temp);
 
         const card = $("<div>").addClass("card col-md-2 ml-4 bg-primary text-white");
         const cardBody = $("<div>").addClass("card-body p-3 forecastBody")
         const cityDate = $("<h4>").addClass("card-title").text(date.toLocaleDateString('en-US'));
-        const temperature = $("<p>").addClass("card-text forecastTemp").text("Temperature: " + tempF + " °F");
+        const temperature = $("<p>").addClass("card-text forecastTemp").text("Temperature: " + results[i].main.temp + "°F");
         const humidity = $("<p>").addClass("card-text forecastHumidity").text("Humidity: " + results[i].main.humidity + "%");
 
         const image = $("<img>").attr("src", "https://openweathermap.org/img/w/" + results[i].weather[0].icon + ".png")
@@ -124,20 +116,3 @@ function getCurrentForecast () {
 }
 
 
-// // const base = "https//api.openweathermap.org/data/2.5/forecast";
-// const city = ("")
-// const apiKey = "&appid=86ea8aa56587bcd972b7b5efee08d7db";
-// const queryUrl = "https://api.openweathermap.org/data/2.5/weather?q=" + city + apiKey;
-
-// // let city = $("#searchTerm").val();
-// let date = new Date();
-
-// const searchbox = document.querySelector(".search-box");
-// searchbox.addEventListener("keypress", startQuery);
-
-// function startQuery(event) {  
-//     if (event.keyCode == 13) {
-//         // getResults(searchbox.value);
-//         console.log(searchbox.value)
-//     }
-// }
